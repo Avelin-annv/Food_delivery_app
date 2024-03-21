@@ -1,0 +1,32 @@
+{
+  "name": "foodorderingappreact",
+  "version": "1.0.0",
+  "description": "A food delivery app project build using React.",
+  "scripts": {
+    "test": "npm test",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Avelin-annv/Food_delivery_app.git"
+  },
+  "author": "Avelin Ann Varghese",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Avelin-annv/Food_delivery_app/issues"
+  },
+  "homepage": "https://github.com/Avelin-annv/Food_delivery_app#readme",
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.2",
+    "react": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.3"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "postcss": "^8.4.38",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
+  }
+}
