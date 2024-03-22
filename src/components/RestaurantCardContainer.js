@@ -3,7 +3,7 @@ import RestaurantCard from "./RestaurantCard";
 import { Link } from "react-router-dom";
 
 const RestaurantCardContainer = ({ restaurantList }) => {
-  //console.log("restaurantList", restaurantList);
+  console.log("restaurantList", restaurantList.length);
   const PromotedCard = promotedRestaurantCard(RestaurantCard);
   return (
     <div className="flex flex-wrap">

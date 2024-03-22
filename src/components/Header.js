@@ -35,13 +35,14 @@ const Header = () => {
         {/* <li className="m-2.5">User:{loggedInUser}</li> */}
         <li className="m-2.5">
           <Link to="/cart">
-            🛒<label>{`Cart (${cartItems.length})`}</label>
+            🛒
+            <label data-testid="cart-items-no">{`Cart (${cartItems.length})`}</label>
           </Link>
         </li>
         <li className="m-2.5">
           {" "}
           <button
-            className="login-btn"
+            data-testid="login-btn"
             onClick={() => {
               setBtnName(btnName === "Login" ? "Logout" : "Login");
             }}
