@@ -24,7 +24,6 @@ const Home = () => {
     );
   }
   const handleSearch = () => {
-    debugger;
     const filteredList = restaurantList?.filter((item) =>
       item.info.name.toLowerCase().includes(searchVal.toLowerCase())
     );

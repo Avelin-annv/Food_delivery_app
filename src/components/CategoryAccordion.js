@@ -1,18 +1,19 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addItem } from "../store/cartSlice";
+import { addItem, addItemWithcount, removeItem } from "../store/cartSlice";
 import { CLASSIFIER_ICONS, IMG_CDN_URL } from "../utils/constants";
 
 const CategoryAccordion = ({ dataList }) => {
   const dispatch = useDispatch();
-  const handleAddItem = (item) => {
-    //add to store
-    dispatch(addItem(item));
+  const handleAddItem = (categoryItem) => {
+    dispatch(addItemWithcount({ id: categoryItem.card.info.id, categoryItem }));
+  };
+  const handleRemoveItem = (id) => {
+    dispatch(removeItem(id));
   };
   return (
     <div className=" my-8">
       {dataList.map((item) => {
-        // console.log("finding key", item.card.info.id);
         return (
           <div key={item.card.info.id}>
             <div className="flex m-4 justify-between">
@@ -33,12 +34,23 @@ const CategoryAccordion = ({ dataList }) => {
                 </label>
               </div>
               <div className="">
-                <button
-                  className="px-6 shadow-lg my-2 text-green-400 rounded-lg"
-                  onClick={() => handleAddItem(item)}
-                >
-                  Add+
-                </button>
+                {item?.card?.count > 0 ? (
+                  <div className="px-6 shadow-lg my-2 text-green-400 rounded-lg">
+                    <button onClick={() => handleRemoveItem(item.card.info.id)}>
+                      -
+                    </button>
+                    <span>Add</span>
+                    <button>+</button>
+                  </div>
+                ) : (
+                  <button
+                    className="px-6 shadow-lg my-2 text-green-400 rounded-lg"
+                    onClick={() => handleAddItem(item)}
+                  >
+                    Add
+                  </button>
+                )}
+
                 {item?.card?.info?.imageId ? (
                   <div className="">
                     <img

@@ -3,7 +3,6 @@ import RestaurantCard from "./RestaurantCard";
 import { Link } from "react-router-dom";
 
 const RestaurantCardContainer = ({ restaurantList }) => {
-  console.log("restaurantList", restaurantList.length);
   const PromotedCard = promotedRestaurantCard(RestaurantCard);
   return (
     <div className="flex flex-wrap">
@@ -14,7 +13,6 @@ const RestaurantCardContainer = ({ restaurantList }) => {
           ) : (
             <RestaurantCard item={item.info} />
           )}
-          {/* <RestaurantCard item={item.info} /> */}
         </Link>
       ))}
     </div>

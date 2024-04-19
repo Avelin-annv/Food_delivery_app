@@ -6,14 +6,17 @@ import CategoryAccordion from "./CategoryAccordion";
 const CartPage = () => {
   const dispatch = useDispatch();
   const cartItems = useSelector((store) => store.cart.items);
+  const cartList = cartItems.slice(1).map((item) => {
+    return item[Object.keys(item)[0]];
+  });
+
   const handleClearCart = () => {
     dispatch(clearCart());
   };
   return (
     <div>
       <h1 className="text-center font-bold text-2xl m-4">Your cart</h1>
-      {/* <h2>{cartItems.join(",")}</h2> */}
-      {/* display added items here */}
+
       {cartItems?.length === 0 ? (
         <div className="text-center ">
           <img className="w-40 m-auto" src={COOKING_IMG_URL}></img>
@@ -30,7 +33,7 @@ const CartPage = () => {
           >
             Clear cart
           </button>
-          <CategoryAccordion dataList={cartItems} />
+          <CategoryAccordion dataList={cartList} />
         </div>
       )}
     </div>

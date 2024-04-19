@@ -5,18 +5,13 @@ export const CLOUDINARY_URL =
 export const swiggy_api_URL =
   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.58130&lng=76.52630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING";
 
-//"https://corsproxy.org/?" +
-//"http://crossorigin.me" +
-// encodeURIComponent(
-//   "https://www.swiggy.com/dapi/restaurants/list/v5?lat=9.58130&lng=76.52630&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
-// );
 export const IMG_CDN_URL =
-  "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/";
-
+  "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/";
 export const RESTAURANT_MENU_API =
   // "https://corsproxy.org/?" +
   // encodeURIComponent(
-  "https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.58130&lng=76.52630&restaurantId=";
+
+  " https://www.swiggy.com/dapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=9.58130&lng=76.52630&restaurantId=";
 // );
 export const ITEM_CATEGORY =
   "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory";

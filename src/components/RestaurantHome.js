@@ -14,10 +14,10 @@ const RestaurantHome = () => {
 
   if (resData === null) return <ShimmerComponent />;
   const { name, avgRatingString, cuisines, sla } =
-    resData?.data?.cards[0]?.card?.card?.info;
+    resData?.data?.cards[2]?.card?.card?.info;
 
   const categoryCards =
-    resData?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
+    resData?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(
       (item) => item.card.card["@type"] == ITEM_CATEGORY
     );
 
@@ -41,7 +41,6 @@ const RestaurantHome = () => {
                   setExpandedIndex(null);
                 } else setExpandedIndex(index);
               }}
-              //currIndex={index}
             />
           );
         })}{" "}

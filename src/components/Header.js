@@ -36,7 +36,7 @@ const Header = () => {
         <li className="m-2.5">
           <Link to="/cart">
             🛒
-            <label data-testid="cart-items-no">{`Cart (${cartItems.length})`}</label>
+            <label data-testid="cart-items-no">{`Cart (${cartItems[0]?.totalCount})`}</label>
           </Link>
         </li>
         <li className="m-2.5">
