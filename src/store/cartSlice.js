@@ -2,24 +2,46 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const cartSlice = createSlice({
   name: "cart",
-  initialState: { items: [] },
+  initialState: { items: [{ totalCount: 0 }] },
   reducers: {
-    //set of  reducer functions
-    addItem: (state, action) => {
-      state.items.push(action.payload);
+    addItemWithcount: (state, action) => {
+      const { id, categoryItem } = action.payload;
+      let isNewEntry = true;
+      state.items.forEach((item, index) => {
+        if (item[id]) {
+          let prevCount = item[id].count;
+          state.items.splice(index, 1);
+          state.items.push({ [id]: { ...categoryItem, count: prevCount + 1 } });
+
+          isNewEntry = false;
+          return;
+        }
+      });
+      if (isNewEntry) state.items.push({ [id]: { ...categoryItem, count: 1 } });
+      state.items[0].totalCount += 1;
     },
+
     removeItem: (state, action) => {
-      let filteredItems = state.items.filter(
-        (item) => item.card.info.id === action.payload.card.info.id
-      );
-      state.items = filteredItems;
+      const id = action.payload;
+
+      state.items.forEach((item, index) => {
+        if (item[id]) {
+          let prevCount = item[id].count;
+          if (prevCount === 1) {
+            state.items.splice(index, 1);
+          } else {
+            state.items[index][id].count = prevCount - 1;
+          }
+          return;
+        }
+      });
+      state.items[0].totalCount -= 1;
     },
     clearCart: (state) => {
-      //Both ways work
-      // state.items.length = 0;
       return { items: [] };
     },
   },
 });
-export const { addItem, removeItem, clearCart } = cartSlice.actions;
+export const { addItem, removeItem, clearCart, addItemWithcount } =
+  cartSlice.actions;
 export default cartSlice.reducer;

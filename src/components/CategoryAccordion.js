@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch } from "react-redux";
-import { addItem, addItemWithcount, removeItem } from "../store/cartSlice";
+import { addItemWithcount, removeItem } from "../store/cartSlice";
 import { CLASSIFIER_ICONS, IMG_CDN_URL } from "../utils/constants";
 
 const CategoryAccordion = ({ dataList }) => {
@@ -34,12 +34,12 @@ const CategoryAccordion = ({ dataList }) => {
                 </label>
               </div>
               <div className="">
-                {item?.card?.count > 0 ? (
+                {item?.count > 0 ? (
                   <div className="px-6 shadow-lg my-2 text-green-400 rounded-lg">
                     <button onClick={() => handleRemoveItem(item.card.info.id)}>
                       -
                     </button>
-                    <span>Add</span>
+                    <span>{item?.count}</span>
                     <button>+</button>
                   </div>
                 ) : (

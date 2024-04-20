@@ -17,7 +17,7 @@ const CartPage = () => {
     <div>
       <h1 className="text-center font-bold text-2xl m-4">Your cart</h1>
 
-      {cartItems?.length === 0 ? (
+      {cartItems?.length === 1 ? (
         <div className="text-center ">
           <img className="w-40 m-auto" src={COOKING_IMG_URL}></img>
           <h1>Your cart is Empty!</h1>
