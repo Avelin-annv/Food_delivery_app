@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Avelin-annv/Food_delivery_app#readme",
   "dependencies": {
+    "@emailjs/browser": "^4.3.3",
     "@parcel/babel-preset-env": "^2.12.0",
     "@reduxjs/toolkit": "^2.2.2",
     "@testing-library/react": "^14.2.2",

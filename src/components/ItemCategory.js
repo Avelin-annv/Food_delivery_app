@@ -11,7 +11,7 @@ const ItemCategory = ({ dataList, expand, setExpandedIndex }) => {
     setExpandedIndex();
   };
   return (
-    <div className="w-6/12 mx-auto my-8 p-4 shadow-lg">
+    <div className="w-10/12 lg:w-6/12 md:lg:w-8/12 mx-auto my-8 p-4 shadow-lg">
       <div
         className="flex justify-between cursor-pointer"
         onClick={handleExpand}
