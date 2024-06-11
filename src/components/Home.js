@@ -3,18 +3,16 @@ import React, { useState, useEffect } from "react";
 import { swiggy_api_URL } from "../utils/constants";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import RestaurantCardContainer from "./RestaurantCardContainer";
-import ShimmerComponent from "./ShimmerComponent";
+import ShimmerComponent from "../Shimmer/ShimmerComponent";
 const Home = () => {
   const [restaurantList, setRestaurantList] = useState([]);
   const [searchList, setSearchList] = useState([]);
   const [searchVal, setSearchVal] = useState("");
   const isOnline = useOnlineStatus();
   async function getData() {
-    //4 1
     const res = await fetch(swiggy_api_URL);
     const data = await res.json();
 
-    console.log("fetch", res);
     setRestaurantList(
       data?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );

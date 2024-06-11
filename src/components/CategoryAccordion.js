@@ -19,7 +19,7 @@ const CategoryAccordion = ({ dataList }) => {
             <div className="flex m-4 justify-between">
               <div className="block w-9/12">
                 <img
-                  className="w-4 h-4"
+                  className="w-6 h-6"
                   src={
                     CLASSIFIER_ICONS[item.card.info.itemAttribute.vegClassifier]
                   }

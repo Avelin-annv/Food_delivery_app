@@ -3,16 +3,15 @@ import RestaurantCard from "./RestaurantCard";
 import { Link } from "react-router-dom";
 
 const RestaurantCardContainer = ({ restaurantList }) => {
-  const PromotedCard = promotedRestaurantCard(RestaurantCard);
   return (
     <div className="flex flex-wrap">
       {restaurantList?.map((item) => (
-        <Link key={item.info.id} to={`/restaurant/${item.info.id}`}>
-          {item?.info?.aggregatedDiscountInfoV3?.discountTag ? (
-            <PromotedCard item={item.info} />
-          ) : (
-            <RestaurantCard item={item.info} />
-          )}
+        <Link
+          key={item.info.id}
+          to={`/restaurant/${item.info.id}`}
+          className="mx-auto"
+        >
+          <RestaurantCard item={item.info} />
         </Link>
       ))}
     </div>
