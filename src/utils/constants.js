@@ -16,7 +16,7 @@ export const CLASSIFIER_ICONS = {
 export const COOKING_IMG_URL =
   "https://c8.alamy.com/comp/JKGMCE/italian-or-french-chef-holding-a-hot-pot-cloud-of-steam-JKGMCE.jpg";
 
-export const PROFILES = [
+export const PUBLIC_LINKS = [
   {
     id: "linkedin",
     imgHref:

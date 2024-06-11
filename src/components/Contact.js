@@ -1,7 +1,7 @@
 import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { Link } from "react-router-dom";
-import { PROFILES } from "../utils/constants";
+import { PUBLIC_LINKS } from "../utils/constants";
 
 const Contact = () => {
   const [form, setForm] = useState({
@@ -99,7 +99,7 @@ const Contact = () => {
           <div className="text-center font-semibold">
             <p>Feel free to connect</p>
             <div className="my-4">
-              {PROFILES.map((item) => (
+              {PUBLIC_LINKS.map((item) => (
                 <Link to={item.link} key={item.id} className="m-2 p-2">
                   <button className="rounded-full w-9 mx-1 hover:shadow-2xl hover:shadow-white shadow-inner">
                     <img src={item.imgHref} className="w-9 h-9 " />
