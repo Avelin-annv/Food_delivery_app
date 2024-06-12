@@ -14,11 +14,11 @@ const Home = () => {
     const data = await res.json();
 
     setRestaurantList(
-      data?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
 
     setSearchList(
-      data?.data.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
+      data?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants
     );
   }
   const handleSearch = () => {

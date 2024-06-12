@@ -1,6 +1,7 @@
 {
   "name": "foodorderingappreact",
   "version": "1.0.0",
+  "proxy": "https://swiggy-server-q32t.onrender.com/",
   "description": "A food delivery app project build using React.",
   "scripts": {
     "test": "jest",
